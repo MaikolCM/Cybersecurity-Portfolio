@@ -1,1 +1,33 @@
-nmap-escaneo-red
+# 🔍 Escaneo de red con Nmap
+
+Este proyecto muestra un ejemplo básico de escaneo de red utilizando la herramienta **Nmap**, una de las más utilizadas en ciberseguridad para detectar hosts activos, puertos abiertos y servicios.
+
+---
+
+## 🎯 Objetivo
+
+- Escanear una red local o un host específico
+- Identificar puertos abiertos y servicios disponibles
+- Analizar posibles vulnerabilidades
+
+---
+
+## 🛠 Herramientas usadas
+
+- 🔧 Nmap
+- 💻 Sistema operativo: Windows / Linux (según lo uses)
+- 📝 Terminal / consola
+
+---
+
+## 📋 Comandos usados
+
+```bash
+# Escaneo rápido
+nmap -T4 -F 192.168.1.1
+
+# Escaneo completo con detección de SO y versiones
+nmap -A 192.168.1.1
+
+# Escaneo de todos los puertos
+nmap -p- 192.168.1.1
