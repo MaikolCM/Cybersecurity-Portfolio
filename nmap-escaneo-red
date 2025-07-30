@@ -20,14 +20,11 @@ Este proyecto muestra un ejemplo básico de escaneo de red utilizando la herrami
 
 ---
 
-## 📋 Comandos usados
+📋 Comandos usados
 
-```bash
-# Escaneo rápido
-nmap -T4 -F 192.168.1.1
+🔍 Escaneo de puertos con Nmap a máquina Windows 10
 
-# Escaneo completo con detección de SO y versiones
-nmap -A 192.168.1.1
+Objetivo:Identificar puertos abiertos y servicios activos en una máquina Windows 10 virtual conectada en red con Kali Linux.
 
-# Escaneo de todos los puertos
-nmap -p- 192.168.1.1
+🧪 Comando utilizado:
+nmap -A 192.168.100.77
