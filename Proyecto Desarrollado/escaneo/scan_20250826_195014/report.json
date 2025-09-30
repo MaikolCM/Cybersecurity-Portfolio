@@ -1,0 +1,603 @@
+{
+  "meta": {
+    "generated_at": "2025-08-26T19:50:14.275885",
+    "targets": [
+      "192.168.100.90"
+    ],
+    "top_ports": 1000,
+    "os_detect": false,
+    "timing": "T4",
+    "scripts": "vulners,vuln,ssl-enum-ciphers,ssh2-enum-algos,ftp-anon,smb2-security-mode,smb-security-mode,rdp-enum-encryption,http-security-headers,http-title"
+  },
+  "nmap": {
+    "hosts": [
+      {
+        "ip": "192.168.100.90",
+        "hostnames": [],
+        "os": null,
+        "services": [
+          {
+            "port": 135,
+            "proto": "tcp",
+            "name": "msrpc",
+            "product": "Microsoft Windows RPC",
+            "version": "",
+            "extrainfo": "",
+            "scripts": []
+          },
+          {
+            "port": 139,
+            "proto": "tcp",
+            "name": "netbios-ssn",
+            "product": "Microsoft Windows netbios-ssn",
+            "version": "",
+            "extrainfo": "",
+            "scripts": []
+          },
+          {
+            "port": 445,
+            "proto": "tcp",
+            "name": "microsoft-ds",
+            "product": "",
+            "version": "",
+            "extrainfo": "",
+            "scripts": []
+          },
+          {
+            "port": 1433,
+            "proto": "tcp",
+            "name": "ms-sql-s",
+            "product": "Microsoft SQL Server 2022",
+            "version": "16.00.1000",
+            "extrainfo": "",
+            "scripts": [
+              {
+                "id": "ssl-enum-ciphers",
+                "output": "\n  TLSv1.0: \n    ciphers: \n      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp384r1) - A\n      TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (ecdh_x25519) - A\n      TLS_RSA_WITH_AES_256_CBC_SHA (rsa 3072) - A\n      TLS_RSA_WITH_AES_128_CBC_SHA (rsa 3072) - A\n    compressors: \n      NULL\n    cipher preference: server\n  TLSv1.1: \n    ciphers: \n      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp384r1) - A\n      TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (ecdh_x25519) - A\n      TLS_RSA_WITH_AES_256_CBC_SHA (rsa 3072) - A\n      TLS_RSA_WITH_AES_128_CBC_SHA (rsa 3072) - A\n    compressors: \n      NULL\n    cipher preference: server\n  TLSv1.2: \n    ciphers: \n      TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (secp384r1) - A\n      TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (ecdh_x25519) - A\n      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (secp384r1) - A\n      TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 (ecdh_x25519) - A\n      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp384r1) - A\n      TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (ecdh_x25519) - A\n      TLS_RSA_WITH_AES_256_GCM_SHA384 (rsa 3072) - A\n      TLS_RSA_WITH_AES_128_GCM_SHA256 (rsa 3072) - A\n      TLS_RSA_WITH_AES_256_CBC_SHA256 (rsa 3072) - A\n      TLS_RSA_WITH_AES_128_CBC_SHA256 (rsa 3072) - A\n      TLS_RSA_WITH_AES_256_CBC_SHA (rsa 3072) - A\n      TLS_RSA_WITH_AES_128_CBC_SHA (rsa 3072) - A\n    compressors: \n      NULL\n    cipher preference: server\n  least strength: A\n- TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA\n- secp384r1\n- A\n- TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA\n- ecdh_x25519\n- A\n- TLS_RSA_WITH_AES_256_CBC_SHA\n- rsa 3072\n- A\n- TLS_RSA_WITH_AES_128_CBC_SHA\n- rsa 3072\n- A\n- NULL\n- server\n- TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA\n- secp384r1\n- A\n- TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA\n- ecdh_x25519\n- A\n- TLS_RSA_WITH_AES_256_CBC_SHA\n- rsa 3072\n- A\n- TLS_RSA_WITH_AES_128_CBC_SHA\n- rsa 3072\n- A\n- NULL\n- server\n- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384\n- secp384r1\n- A\n- TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256\n- ecdh_x25519\n- A\n- TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384\n- secp384r1\n- A\n- TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256\n- ecdh_x25519\n- A\n- TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA\n- secp384r1\n- A\n- TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA\n- ecdh_x25519\n- A\n- TLS_RSA_WITH_AES_256_GCM_SHA384\n- rsa 3072\n- A\n- TLS_RSA_WITH_AES_128_GCM_SHA256\n- rsa 3072\n- A\n- TLS_RSA_WITH_AES_256_CBC_SHA256\n- rsa 3072\n- A\n- TLS_RSA_WITH_AES_128_CBC_SHA256\n- rsa 3072\n- A\n- TLS_RSA_WITH_AES_256_CBC_SHA\n- rsa 3072\n- A\n- TLS_RSA_WITH_AES_128_CBC_SHA\n- rsa 3072\n- A\n- NULL\n- server\n- A"
+              },
+              {
+                "id": "tls-ticketbleed",
+                "output": "ERROR: Script execution failed (use -d to debug)"
+              },
+              {
+                "id": "vulners",
+                "output": "\n  cpe:/a:microsoft:sql_server:2019: \n    \tFF02A46B-33EF-5995-B22B-451D42342473\t10.0\thttps://vulners.com/githubexploit/FF02A46B-33EF-5995-B22B-451D42342473\t*EXPLOIT*\n    \t5DE1B404-0368-5986-856A-306EA0FE0C09\t10.0\thttps://vulners.com/githubexploit/5DE1B404-0368-5986-856A-306EA0FE0C09\t*EXPLOIT*\n    \tCVE-2023-38169\t8.8\thttps://vulners.com/cve/CVE-2023-38169\n    \tCVE-2023-21713\t8.8\thttps://vulners.com/cve/CVE-2023-21713\n    \tCVE-2023-21705\t8.8\thttps://vulners.com/cve/CVE-2023-21705\n    \tCVE-2021-1636\t8.8\thttps://vulners.com/cve/CVE-2021-1636\n    \tCVE-2023-36785\t7.8\thttps://vulners.com/cve/CVE-2023-36785\n    \tCVE-2023-36730\t7.8\thttps://vulners.com/cve/CVE-2023-36730\n    \tCVE-2023-36420\t7.8\thttps://vulners.com/cve/CVE-2023-36420\n    \tCVE-2023-36417\t7.8\thttps://vulners.com/cve/CVE-2023-36417\n    \tCVE-2023-32028\t7.8\thttps://vulners.com/cve/CVE-2023-32028\n    \tCVE-2023-32027\t7.8\thttps://vulners.com/cve/CVE-2023-32027\n    \tCVE-2023-32026\t7.8\thttps://vulners.com/cve/CVE-2023-32026\n    \tCVE-2023-32025\t7.8\thttps://vulners.com/cve/CVE-2023-32025\n    \tCVE-2023-29356\t7.8\thttps://vulners.com/cve/CVE-2023-29356\n    \tCVE-2023-29349\t7.8\thttps://vulners.com/cve/CVE-2023-29349\n    \tCVE-2023-21718\t7.8\thttps://vulners.com/cve/CVE-2023-21718\n    \tCVE-2023-21704\t7.8\thttps://vulners.com/cve/CVE-2023-21704\n    \tCVE-2023-21528\t7.8\thttps://vulners.com/cve/CVE-2023-21528\n    \tCVE-2022-23276\t7.8\thttps://vulners.com/cve/CVE-2022-23276\n    \tCVE-2022-29143\t7.5\thttps://vulners.com/cve/CVE-2022-29143\n    \tCVE-2023-23384\t7.3\thttps://vulners.com/cve/CVE-2023-23384\n    \tCVE-2023-36728\t5.5\thttps://vulners.com/cve/CVE-2023-36728\n- true\n- FF02A46B-33EF-5995-B22B-451D42342473\n- 10.0\n- githubexploit\n- true\n- 5DE1B404-0368-5986-856A-306EA0FE0C09\n- 10.0\n- githubexploit\n- false\n- CVE-2023-38169\n- 8.8\n- cve\n- false\n- CVE-2023-21713\n- 8.8\n- cve\n- false\n- CVE-2023-21705\n- 8.8\n- cve\n- false\n- CVE-2021-1636\n- 8.8\n- cve\n- false\n- CVE-2023-36785\n- 7.8\n- cve\n- false\n- CVE-2023-36730\n- 7.8\n- cve\n- false\n- CVE-2023-36420\n- 7.8\n- cve\n- false\n- CVE-2023-36417\n- 7.8\n- cve\n- false\n- CVE-2023-32028\n- 7.8\n- cve\n- false\n- CVE-2023-32027\n- 7.8\n- cve\n- false\n- CVE-2023-32026\n- 7.8\n- cve\n- false\n- CVE-2023-32025\n- 7.8\n- cve\n- false\n- CVE-2023-29356\n- 7.8\n- cve\n- false\n- CVE-2023-29349\n- 7.8\n- cve\n- false\n- CVE-2023-21718\n- 7.8\n- cve\n- false\n- CVE-2023-21704\n- 7.8\n- cve\n- false\n- CVE-2023-21528\n- 7.8\n- cve\n- false\n- CVE-2022-23276\n- 7.8\n- cve\n- false\n- CVE-2022-29143\n- 7.5\n- cve\n- false\n- CVE-2023-23384\n- 7.3\n- cve\n- false\n- CVE-2023-36728\n- 5.5\n- cve"
+              }
+            ]
+          },
+          {
+            "port": 7070,
+            "proto": "tcp",
+            "name": "realserver",
+            "product": "",
+            "version": "",
+            "extrainfo": "",
+            "scripts": [
+              {
+                "id": "ssl-enum-ciphers",
+                "output": "\n  TLSv1.2: \n    ciphers: \n      TLS_DHE_RSA_WITH_AES_128_CBC_SHA (dh 2048) - A\n      TLS_DHE_RSA_WITH_AES_128_CBC_SHA256 (dh 2048) - A\n      TLS_DHE_RSA_WITH_AES_128_GCM_SHA256 (dh 2048) - A\n      TLS_DHE_RSA_WITH_AES_256_CBC_SHA (dh 2048) - A\n      TLS_DHE_RSA_WITH_AES_256_CBC_SHA256 (dh 2048) - A\n      TLS_DHE_RSA_WITH_AES_256_GCM_SHA384 (dh 2048) - A\n      TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256 (dh 2048) - A\n      TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (secp256r1) - A\n      TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 (secp256r1) - A\n      TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (secp256r1) - A\n      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp256r1) - A\n      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (secp256r1) - A\n      TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (secp256r1) - A\n      TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256 (secp256r1) - A\n      TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A\n      TLS_RSA_WITH_AES_128_CBC_SHA256 (rsa 2048) - A\n      TLS_RSA_WITH_AES_128_GCM_SHA256 (rsa 2048) - A\n      TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A\n      TLS_RSA_WITH_AES_256_CBC_SHA256 (rsa 2048) - A\n      TLS_RSA_WITH_AES_256_GCM_SHA384 (rsa 2048) - A\n    compressors: \n      NULL\n    cipher preference: client\n  TLSv1.3: \n    ciphers: \n      TLS_AKE_WITH_AES_128_GCM_SHA256 (ecdh_x25519) - A\n      TLS_AKE_WITH_AES_256_GCM_SHA384 (ecdh_x25519) - A\n      TLS_AKE_WITH_CHACHA20_POLY1305_SHA256 (ecdh_x25519) - A\n    cipher preference: client\n  least strength: A\n- TLS_DHE_RSA_WITH_AES_128_CBC_SHA\n- dh 2048\n- A\n- TLS_DHE_RSA_WITH_AES_128_CBC_SHA256\n- dh 2048\n- A\n- TLS_DHE_RSA_WITH_AES_128_GCM_SHA256\n- dh 2048\n- A\n- TLS_DHE_RSA_WITH_AES_256_CBC_SHA\n- dh 2048\n- A\n- TLS_DHE_RSA_WITH_AES_256_CBC_SHA256\n- dh 2048\n- A\n- TLS_DHE_RSA_WITH_AES_256_GCM_SHA384\n- dh 2048\n- A\n- TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256\n- dh 2048\n- A\n- TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA\n- secp256r1\n- A\n- TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256\n- secp256r1\n- A\n- TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256\n- secp256r1\n- A\n- TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA\n- secp256r1\n- A\n- TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384\n- secp256r1\n- A\n- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384\n- secp256r1\n- A\n- TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256\n- secp256r1\n- A\n- TLS_RSA_WITH_AES_128_CBC_SHA\n- rsa 2048\n- A\n- TLS_RSA_WITH_AES_128_CBC_SHA256\n- rsa 2048\n- A\n- TLS_RSA_WITH_AES_128_GCM_SHA256\n- rsa 2048\n- A\n- TLS_RSA_WITH_AES_256_CBC_SHA\n- rsa 2048\n- A\n- TLS_RSA_WITH_AES_256_CBC_SHA256\n- rsa 2048\n- A\n- TLS_RSA_WITH_AES_256_GCM_SHA384\n- rsa 2048\n- A\n- NULL\n- client\n- TLS_AKE_WITH_AES_128_GCM_SHA256\n- ecdh_x25519\n- A\n- TLS_AKE_WITH_AES_256_GCM_SHA384\n- ecdh_x25519\n- A\n- TLS_AKE_WITH_CHACHA20_POLY1305_SHA256\n- ecdh_x25519\n- A\n- client\n- A"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "findings": {
+    "issues": [
+      {
+        "severity": "MEDIUM",
+        "host": "192.168.100.90",
+        "port": 1433,
+        "title": "Protocolos/cifrados TLS débiles habilitados",
+        "details": "\n  TLSv1.0: \n    ciphers: \n      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp384r1) - A\n      TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (ecdh_x25519) - A\n      TLS_RSA_WITH_AES_256_CBC_SHA (rsa 3072) - A\n      TLS_RSA_WITH_AES_128_CBC_SHA (rsa 3072) - A\n    compressors: \n      NULL\n    cipher preference: server\n  TLSv1.1: \n    ciphers: \n      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp384r1) - A\n      TLS_ECDHE"
+      }
+    ],
+    "cves": [
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-38169",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-38169",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-21713",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-21713",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-21705",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-21705",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2021-1636",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2021-1636",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-36785",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-36785",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-36730",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-36730",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-36420",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-36420",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-36417",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-36417",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-32028",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-32028",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-32027",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-32027",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-32026",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-32026",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-32025",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-32025",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-29356",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-29356",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-29349",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-29349",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-21718",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-21718",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-21704",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-21704",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-21528",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-21528",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2022-23276",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2022-23276",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2022-29143",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2022-29143",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-23384",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-23384",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-36728",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-36728",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-38169",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-21713",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-21705",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2021-1636",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-36785",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-36730",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-36420",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-36417",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-32028",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-32027",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-32026",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-32025",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-29356",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-29349",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-21718",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-21704",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-21528",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2022-23276",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2022-29143",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-23384",
+        "source": "vulners"
+      },
+      {
+        "host": "192.168.100.90",
+        "port": 1433,
+        "product": "Microsoft SQL Server 2022",
+        "version": "16.00.1000",
+        "cve": "CVE-2023-36728",
+        "source": "vulners"
+      }
+    ]
+  }
+}
