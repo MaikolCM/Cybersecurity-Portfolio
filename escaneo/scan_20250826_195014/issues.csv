@@ -1,0 +1,2 @@
+severity,host,port,title,details
+MEDIUM,192.168.100.90,1433,Protocolos/cifrados TLS débiles habilitados,   TLSv1.0:      ciphers:        TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp384r1) - A       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (ecdh_x25519) - A       TLS_RSA_WITH_AES_256_CBC_SHA (rsa 3072) - A       TLS_RSA_WITH_AES_128_CBC_SHA (rsa 3072) - A     compressors:        NULL     cipher preference: server   TLSv1.1:      ciphers:        TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp384r1) - A       TLS_ECDHE

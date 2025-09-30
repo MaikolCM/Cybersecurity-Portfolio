@@ -1,0 +1,2 @@
+Fecha,IP,Tipo de Ataque,Detalle,Accion Tomada
+2025-08-26 17:22:13,192.168.1.100,SQL Injection,Intento de inyección detectado en el endpoint /login,IP bloqueada en firewall
